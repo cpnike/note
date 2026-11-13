@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="My Health Passport 個人電子病歷">
+<title>個人電子病歷｜My Health Passport</title>
+<style>
+:root {
+  --ink: #1f2937; --muted: #64748b; --line: #e2e8f0;
+  --paper: #ffffff; --bg: #f1f5f9; --accent: #245b78; --soft: #eaf2f6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+               "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+.page { max-width: 980px; margin: 32px auto; padding: 0 18px 40px; }
+.header {
+  background: linear-gradient(135deg, #173f56, #2c7187);
+  color: white; border-radius: 18px; padding: 30px 32px; margin-bottom: 18px;
+  box-shadow: 0 10px 28px rgba(15, 45, 65, .13);
+}
+.eyebrow { font-size: 12px; letter-spacing: .14em; opacity: .82; text-transform: uppercase; }
+h1 { margin: 6px 0 4px; font-size: clamp(25px, 4vw, 34px); line-height: 1.25; }
+.subtitle { margin: 0; opacity: .9; }
+.meta { margin-top: 18px; font-size: 12px; opacity: .8; }
+.toolbar { display: flex; justify-content: flex-end; gap: 10px; margin: 14px 0; }
+button {
+  border: 1px solid #cbd5e1; background: white; color: #1e293b;
+  border-radius: 9px; padding: 9px 14px; font-size: 13px; cursor: pointer;
+}
+button:hover { background: #f8fafc; }
+.section {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+  padding: 20px 22px; margin: 14px 0; box-shadow: 0 3px 12px rgba(15,23,42,.035);
+  break-inside: avoid;
+}
+h2 {
+  font-size: 17px; margin: 0 0 14px; color: var(--accent);
+  padding-bottom: 9px; border-bottom: 1px solid var(--line);
+}
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.field { padding: 10px 0; border-bottom: 1px solid #f1f5f9; min-width: 0; }
+.label { color: var(--muted); font-size: 12px; margin-bottom: 3px; }
+.value { font-size: 14px; overflow-wrap: anywhere; white-space: normal; }
+.notice {
+  background: #fff; border: 1px solid #e2e8f0; border-left: 4px solid #d49a35;
+  border-radius: 10px; padding: 16px 18px; margin-top: 16px; font-size: 13px;
+}
+.notice h2 { color: #805b13; border: 0; margin: 0 0 8px; padding: 0; font-size: 15px; }
+.notice ul { margin: 6px 0 0; padding-left: 20px; }
+.footer { text-align: center; color: var(--muted); font-size: 11px; padding: 22px 0 0; }
+@media (max-width: 620px) {
+  .page { margin: 14px auto; padding: 0 10px 24px; }
+  .header { padding: 23px 20px; border-radius: 14px; }
+  .section { padding: 17px 16px; }
+  .fields { grid-template-columns: 1fr; }
+  .toolbar { justify-content: stretch; }
+  .toolbar button { flex: 1; }
+}
+@media print {
+  @page { size: A4; margin: 14mm; }
+  body { background: white; color: #111827; }
+  .page { max-width: none; margin: 0; padding: 0; }
+  .header { background: #eaf2f6 !important; color: #173f56 !important; box-shadow: none; border: 1px solid #cbd5e1; }
+  .toolbar { display: none; }
+  .section, .notice { box-shadow: none; break-inside: avoid; }
+  .section { margin: 9px 0; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="header">
+    <div class="eyebrow">Personal Health Record</div>
+    <h1>個人電子病歷</h1>
+    <p class="subtitle">My Health Passport</p>
+    <div class="meta">資料匯出時間：2026-11-13T11:10:36.340Z</div>
+  </header>
+
+  <div class="toolbar">
+    <button type="button" onclick="window.print()">列印／另存為 PDF</button>
+  </div>
+
+  
+      <section class="section">
+        <h2>基本資料</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">姓名</div>
+            <div class="value">段奕臣 Yi-Chen Duan</div>
+          </div>
+          <div class="field">
+            <div class="label">慣用姓名</div>
+            <div class="value">段奕臣 Yi-Chen Duan</div>
+          </div>
+          <div class="field">
+            <div class="label">出生日期</div>
+            <div class="value">2003-12-17</div>
+          </div>
+          <div class="field">
+            <div class="label">生理性別欄位（sex）</div>
+            <div class="value">male</div>
+          </div>
+          <div class="field">
+            <div class="label">gender 欄位（原始填寫）</div>
+            <div class="value">海豚</div>
+          </div>
+          <div class="field">
+            <div class="label">血型</div>
+            <div class="value">O−</div>
+          </div>
+          <div class="field">
+            <div class="label">國籍</div>
+            <div class="value">美國</div>
+          </div>
+          <div class="field">
+            <div class="label">使用語言</div>
+            <div class="value">英文</div>
+          </div>
+          <div class="field">
+            <div class="label">身高</div>
+            <div class="value">181.3 cm</div>
+          </div>
+          <div class="field">
+            <div class="label">體重</div>
+            <div class="value">73.2 kg</div>
+          </div>
+          <div class="field">
+            <div class="label">身分證／護照欄位</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div>
+          <div class="field">
+            <div class="label">職業</div>
+            <div class="value">實習醫學生</div>
+          </div>
+          <div class="field">
+            <div class="label">聯絡電話</div>
+            <div class="value">0958789131</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>緊急聯絡人</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">姓名</div>
+            <div class="value">黃仁勳</div>
+          </div>
+          <div class="field">
+            <div class="label">關係</div>
+            <div class="value">父親</div>
+          </div>
+          <div class="field">
+            <div class="label">電話</div>
+            <div class="value">0958789132</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>重要警示與過敏史</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">重要警示</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div>
+          <div class="field">
+            <div class="label">過敏原</div>
+            <div class="value">對有殼的蝦過敏</div>
+          </div>
+          <div class="field">
+            <div class="label">過敏反應／描述</div>
+            <div class="value">無法食用有殼的蝦</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>目前健康狀況與病史</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">目前疾病／狀況</div>
+            <div class="value">2026.11.13 過敏性鼻炎</div>
+          </div>
+          <div class="field">
+            <div class="label">慢性病史</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div>
+          <div class="field">
+            <div class="label">過去病史</div>
+            <div class="value">2024.05.31 進行左肩關節鏡旋轉肌袖修復手術<br>2022.06 進行左膝關節鏡半月板修復手術</div>
+          </div>
+          <div class="field">
+            <div class="label">心理健康紀錄</div>
+            <div class="value">四個月前壓力造成失眠</div>
+          </div>
+          <div class="field">
+            <div class="label">感染病史</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div>
+          <div class="field">
+            <div class="label">身心障礙</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>手術與麻醉紀錄</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">手術史</div>
+            <div class="value">2024.05.31 進行左肩關節鏡旋轉肌袖修復手術<br>2022.06 進行左膝關節鏡半月板修復手術</div>
+          </div>
+          <div class="field">
+            <div class="label">麻醉史</div>
+            <div class="value">2022.06 半麻<br>2024.05.31 全麻</div>
+          </div>
+          <div class="field">
+            <div class="label">麻醉相關問題</div>
+            <div class="value">nil（原始紀錄）</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>家族病史</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">家族病史</div>
+            <div class="value">爺爺奶奶、外公外婆有Type2DM</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>生活型態</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">吸菸</div>
+            <div class="value">never</div>
+          </div>
+          <div class="field">
+            <div class="label">飲酒</div>
+            <div class="value">occasional</div>
+          </div>
+          <div class="field">
+            <div class="label">物質／刺激物使用（原始欄位）</div>
+            <div class="value">Caffeine dependence</div>
+          </div>
+          <div class="field">
+            <div class="label">運動</div>
+            <div class="value">高強度運動者</div>
+          </div></div>
+      </section>
+      <section class="section">
+        <h2>疫苗與醫療意願</h2>
+        <div class="fields">
+          <div class="field">
+            <div class="label">疫苗接種</div>
+            <div class="value">2026.10.02 左流右新</div>
+          </div>
+          <div class="field">
+            <div class="label">器官捐贈</div>
+            <div class="value">yes</div>
+          </div>
+          <div class="field">
+            <div class="label">預立醫療意願</div>
+            <div class="value">DNR</div>
+          </div></div>
+      </section>
+
+  <aside class="notice">
+    <h2>資料品質與使用提醒</h2>
+    <ul>
+      <li>本頁面依使用者提供的 My Health Passport JSON 原始資料整理，並非醫療人員核實或簽署的正式病歷。</li>
+      <li>原始資料的 sex 欄位為「male」，gender 欄位填寫「海豚」；兩者均依原始內容保留，未自行解讀或合併。</li>
+      <li>疫苗欄位「2026.10.02 左流右新」依原文保留，未推定疫苗商品名或接種細節。</li>
+      <li>「四個月前壓力造成失眠」未換算成確切日期；「Caffeine dependence」保留為原始欄位內容，不另行診斷。</li>
+      <li>DNR 與器官捐贈意願依原始資料記載；本匯出不驗證其法律效力、登錄狀態或臨床適用範圍。</li>
+      <li>本檔含個人及緊急聯絡資訊，請妥善保存，分享前確認接收對象。</li>
+    </ul>
+  </aside>
+  <footer class="footer">My Health Passport · 依原始匯出資料整理</footer>
+</main>
+</body>
+</html>
